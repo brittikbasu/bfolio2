@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ContactPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="slide-container">
+    <ng-container *ngIf = "!deutsch">
+      <h1>Let's discuss your UX</h1>
+<p margin-top>
+As a UX designer, I can work with you to design usable solutions that your users need.
+</p>
+    </ng-container>
+
+     <ng-container *ngIf = "deutsch">
+      <h1>Lassen Sie uns Ihre UX besprechen</h1>
+<p margin-top>
+Als UX-Designer kann ich mit Ihnen arbeiten, um nutzbare Lösungen zu entwerfen, die Ihre Benutzer benötigen.
+</p>
+    </ng-container>
+
+<div class="social-buttons">
+  <a target="_blank" href="https://m.me/brittikbasu"><button ion-button outline padding color="secondary-text" class="social-btn" round>
+<ion-icon name="chatbubbles" style="font-size:1.5em"></ion-icon>
+</button></a>
+<a target="_blank" href="https://www.linkedin.com/in/brittikbasu"><button ion-button outline padding color="secondary-text" class="social-btn" round>
+<ion-icon name="logo-linkedin" style="font-size:1.5em"></ion-icon>
+</button></a>
+<div class="social-breaker"></div>
+<a target="_blank" href="mailto:hello@brittikbasu.com"><button ion-button outline padding color="secondary-text" class="social-btn" round>
+<ion-icon name="mail" style="font-size:1.5em"></ion-icon>
+</button></a>
+<a target="_blank" href="https://github.com/brittikbasu"><button ion-button outline padding color="secondary-text" class="social-btn" round>
+<ion-icon name="logo-github" style="font-size:1.5em"></ion-icon>
+</button></a>
+</div>
+      <button ion-button outline icon-right color="secondary-text" round (click)="switchTabs(2)" style="margin-top:2.5vh;">
+<ng-container *ngIf = "!deutsch">
+Contact Form
+</ng-container>
+<ng-container *ngIf = "deutsch">
+Kontakt Formular
+</ng-container>
+<ion-icon name="paper-plane"></ion-icon>
+</button>
+  </div>
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42932342-1', 'auto');
+ga('send', 'pageview');
+
+</script>

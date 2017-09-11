@@ -1,14 +1,185 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<ion-header class="header-container" style="position: absolute">
+  <ion-item class="me-container">
+    <ion-avatar item-left (click)="this.slides.slideTo(0,500)">
+      <img src="{{slidesData[slideNo].img}}" />
+    </ion-avatar>
+    <h2 [class.secondary-bright]="secondaryBright" *ngIf="!deutsch">{{slidesData[slideNo].headline}}</h2>
+    <h2 [class.secondary-bright]="secondaryBright" *ngIf="deutsch">{{slidesData[slideNo].headlineDE}}</h2>
+    <p *ngIf="!deutsch" (click)="animation(rect)">{{slidesData[slideNo].paragraph}}</p>
+    <p *ngIf="deutsch">{{slidesData[slideNo].paragraphDE}}</p>
+  </ion-item>
+  <!--<ion-item class="deutsch-toggle">
+    <ion-toggle (tap)="languageChanged()">
+    </ion-toggle>
+    <ion-label>Deutsch</ion-label>
+    <h1>de</h1>
+  </ion-item>
+-->
+ <!-- <div class="header-buttons">
+    <button class="header-back-button " round ion-button large icon-left color="secondary" (click)='this.slide("prev")' *ngIf="slideNo > 0">
+  <ion-icon name="arrow-back"></ion-icon>
+</button>
+    <button class="header-forward-button show-only-on-laptop animated pulse" round ion-button large icon-right color="secondary"
+      (click)='this.slide("next")' *ngIf="this.slideNo != 3">
+  <ng-container *ngIf="!deutsch">{{slidesData[nextSlideNo].headline}}</ng-container>
+    <ng-container *ngIf="deutsch">{{slidesData[nextSlideNo].headlineDE}}</ng-container>
+  <ion-icon name="arrow-forward"></ion-icon>
+</button>
+  </div>
+-->
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+
+<ion-content fullscreen="true">
+  
+  
+  
+    <ion-slides class="tabs-area" pager direction="horizontal" (ionSlideDidChange)="slideChanged()" paginationType="progress" effect="coverflow" speed="1250">
+  
+      <ion-slide class="slide-about">
+       <!-- <ion-header no-border>
+          <ion-toolbar>
+             <ion-item class="deutsch-toggle">
+    <ion-toggle [(ngModel)]="deutsch" (tap)="languageChanged()"></ion-toggle>
+      <ion-label>Deutsch</ion-label>
+  
+  </ion-item>
+          </ion-toolbar>
+        </ion-header>
+        -->
+  
+  
+        <page-about></page-about>
+  
+           <!--
+ <ion-footer no-border class="slide-footer show-only-on-mobile" style="margin:0 auto">
+          <div class="blur-bg"></div>
+          <ion-toolbar>
+    
+    <button ion-button icon-right color="secondary-text"  clear class="next-slide-button" (click)='this.slide("next")'>
+    <ion-icon name="ios-arrow-back"> </ion-icon> 
+    <ion-icon name="ios-arrow-back"> </ion-icon>
+    <ion-icon name="ios-arrow-back"> </ion-icon>   
+    <p> Swipe left</p>
+    <ion-icon name="ios-arrow-back"> </ion-icon>
+    <ion-icon name="ios-arrow-back"> </ion-icon>
+  </button>
+
+          </ion-toolbar>
+        </ion-footer>
+        -->
+
+  
+       
+  
+      </ion-slide>
+  
+  
+      <ion-slide class="slide-skills">
+        <!-- <ion-header no-border>
+          <ion-toolbar>
+            <button ion-button round (click)='this.slide("prev")' outline color="primary-dark" class="slide-up" style="position:fixed; border-color: rgba(13, 58, 71, 0.22);">
+              <ion-icon name="arrow-up"></ion-icon></button>
+          </ion-toolbar>
+        </ion-header>
+        -->
+       <page-skills></page-skills>
+       <!-- <ion-footer no-border class="slide-footer">
+          <div class="blur-bg"></div>
+          <ion-toolbar>
+            <button ion-button icon-right color="secondary-text"  outline class="next-slide-button" round (click)='this.slide("next")' when="sm">
+    My Work
+    <ion-icon name="arrow-down"></ion-icon>
+  </button>
+          </ion-toolbar>
+        </ion-footer>
+  -->
+  
+  
+      </ion-slide>
+  
+  
+  
+      <ion-slide class="slide-work">
+        <!-- <ion-header no-border>
+          <ion-toolbar>
+            <button ion-button round (click)='this.slide("prev")' outline color="primary" class="slide-up" style="position:fixed; border-color:rgba(19, 79, 127, 0.55);">
+              <ion-icon name="arrow-up"></ion-icon></button>
+          </ion-toolbar>
+        </ion-header>
+        -->
+        <page-work></page-work>
+        
+       <!-- <ion-footer no-border class="slide-footer">
+                  <div class="blur-bg"></div>
+          <ion-toolbar>
+            <button ion-button color="primary" icon-right outline class="next-slide-button" round (click)='this.slide("next")' when="sm">
+    Get in touch
+    <ion-icon name="arrow-down"></ion-icon>
+  </button>
+          </ion-toolbar>
+        </ion-footer>
+        -->
+     
+          
+      </ion-slide>
+  
+  
+  
+      <ion-slide class="slide-contact">
+       <!-- <ion-header no-border>
+          <ion-toolbar>
+            <button ion-button round (click)='this.slide("prev")' outline color="primary" class="slide-up" style="position:fixed; border-color: rgba(13, 58, 71, 0.22);">
+              <ion-icon name="arrow-up"></ion-icon></button>
+          </ion-toolbar>
+        </ion-header>
+        -->  
+  <page-contact></page-contact>
+      </ion-slide>
+  
+  
+    </ion-slides>
+  
+<ion-footer>
+    <ion-toolbar>
+        
+    <ion-grid class="slide-bar">
+
+        <ion-row>
+          <ion-col  [class.button-active]="this.slideNo == 0" (tap)="this.slides.slideTo(0)">
+            <ion-row><ion-col><ion-icon name="home" class="icon-color"></ion-icon></ion-col></ion-row>
+            <ion-row><ion-col class="text-color">Home</ion-col></ion-row>
+          </ion-col>
+
+
+          <ion-col  [class.button-active]="this.slideNo == 1" (tap)="this.slides.slideTo(1)">
+              <ion-row><ion-col><ion-icon name="code-working" class="icon-color"></ion-icon></ion-col></ion-row>
+              <ion-row><ion-col class="text-color">Skills</ion-col></ion-row>
+            </ion-col>
+            <ion-col (tap)="this.slides.slideTo(2)" [class.button-active]="this.slideNo == 2">
+                <ion-row><ion-col><ion-icon name="briefcase" class="icon-color"></ion-icon></ion-col></ion-row>
+                <ion-row><ion-col class="text-color">Work</ion-col></ion-row>
+              </ion-col>
+              <ion-col (tap)="this.slides.slideTo(3)" [class.button-active]="this.slideNo == 3">
+                  <ion-row><ion-col><ion-icon name="contact" class="icon-color"></ion-icon></ion-col></ion-row>
+                  <ion-row><ion-col class="text-color">Contact</ion-col></ion-row>
+                </ion-col>
+        </ion-row>
+      </ion-grid>
+                </ion-toolbar>
+              </ion-footer>
+
+  </ion-content>
+  
+  
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-42932342-1', 'auto');
+    ga('send', 'pageview');
+  
+  </script>

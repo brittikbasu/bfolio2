@@ -34,15 +34,57 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary: #155968,
+  primary-light: #4a8696,
+  primary-dark: #00303d,
+  primary-text: #1BFF29,
+  primary-2: #134F7F,
+  primary-text-2: #0DE858,
+  //secondary-text-2: #cf5f86,
+  primary-3:#137F75,
+  primary-text-3:#49E80D,
+  secondary: #B20046,//#9B2F59,
+  secondary-bright:#FE0064,
+  //secondary-dark:#680030,
+  secondary-light: #cf5f86,
+  secondary-text:#30d6fa,//#3BC8E7,
+  dark:      #000,// #00303d,
+  light:      #cfcfcf, //#f4f4f4,
+  light-dark: #2e2e2e,
+  tertiary: #c9100a,
 );
 
 
+
+$background-color	: color($colors, dark);
+$tabs-background:color($colors, dark);
+$tabs-ios-tab-icon-color-active : color($colors, secondary);
+$tabs-md-tab-icon-color-active : color($colors, secondary);
+$tabs-tab-color-active	:  color($colors, primary);
+$tabs-ios-tab-icon-color	: rgba(60, 60, 60, 0.7); //inactive tabs icon's outline color 
+$tabs-tab-color-inactive	: rgba(60, 60, 60, 0.7); // inactive tab's font color
+$tabs-ios-border-color: color($colors, primary);
+
+$toolbar-background	: color($colors, dark);
+$toolbar-md-title-text-color : color($colors, light);
+$tabs-tab-padding-top	:-100px;
+
+$toggle-ios-handle-background-color	: color($colors, primary);
+$toggle-md-handle-background-color-off		: color($colors, primary-dark);
+$toggle-md-handle-background-color-on	: color($colors, primary);
+$toggle-md-track-background-color-on: color($colors, secondary-light);
+$toggle-md-track-background-color-off: color($colors, primary);
+
+// Custom
+$header-height: 15.25vh;
+$headline:  'Pacifico', sans-serif;
+$text:   'Exo 2', sans-serif; 
+$decorative-headline: 'Sarina', sans-serif;
+$decorative-text: 'Jura', sans-serif;
+
 // App iOS Variables
+$toolbar-ios-title-text-color	: color($colors, light);
+
 // --------------------------------------------------
 // iOS only Sass variables can go here
 

@@ -1,0 +1,106 @@
+<!--
+  Generated template for the WorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="slide-container">
+    
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+    
+      <ion-card [navPush]="bravecamPage">
+    
+        <div class="card-info-container">
+          <div class="card-title">Brave Cam
+            <ion-icon name="arrow-forward" color="secondary-light" class="card-arrow"></ion-icon>
+          </div>
+                <div class="card-subtitle" *ngIf="!deutsch">Android app to fight racism</div>
+          <div class="card-subtitle" *ngIf="deutsch">App, um Rassismus zu bekämpfen</div>
+        </div>
+    
+        <img class="card-image" src="assets/img/card-brave-cam.png" />
+    
+        <div class="card-button">
+     <button ion-button full color="secondary-light" class="cover" *ngIf="!deutsch">Know More</button>
+        <button ion-button full color="secondary-light" class="cover" *ngIf="deutsch">Mehr wissen</button>    </div>
+    
+      </ion-card>
+    
+      <ion-card [navPush]="chaldiyePage">
+    
+        <div class="card-info-container">
+          <div class="card-title">
+            <div class="view-history">
+              <div>
+                Chaldiye
+                <ion-icon name="arrow-forward" color="secondary-light" class="card-arrow"></ion-icon>
+              </div>
+            </div>
+          </div>
+          <div class="card-subtitle" *ngIf= "!deutsch">App for an Adventure Startup</div>
+                <div class="card-subtitle" *ngIf= "deutsch">App für ein Abenteuer-Startup</div>
+    
+        </div>
+    
+        <img class="card-image" src="assets/img/card-huntfactor.jpg" />
+    
+        <div class="card-button">
+     <button ion-button full color="secondary-light" class="cover" *ngIf="!deutsch">Know More</button>
+        <button ion-button full color="secondary-light" class="cover" *ngIf="deutsch">Mehr wissen</button>    </div>
+    
+      </ion-card>
+    
+      <ion-card [navPush]="polysparesPage">
+    
+        <div class="card-info-container">
+          <div class="card-title">Polyspares
+            <ion-icon name="arrow-forward" color="secondary-light" class="card-arrow"></ion-icon>
+          </div>
+          <div class="card-subtitle"*ngIf="!deutsch">Website for spares exporter</div>
+          <div class="card-subtitle"*ngIf="deutsch">Webseite für Ersatzteile Exporteur</div>
+        </div>
+    
+        <img class="card-image" src="assets/img/card-polyspares.jpg" />
+    
+    <div class="card-button">
+        <button ion-button full color="secondary-light" class="cover" *ngIf="!deutsch">Know More</button>
+        <button ion-button full color="secondary-light" class="cover" *ngIf="deutsch">Mehr wissen</button>
+    
+    </div>
+    
+      </ion-card>
+    
+       <ion-card [navPush]="polizeigewaltPage">
+        <div class="card-info-container">
+          <div class="card-title">Polizeigewalt
+            <ion-icon name="arrow-forward" color="secondary-light" class="card-arrow"></ion-icon>
+          </div>
+          <div class="card-subtitle" *ngIf = "!deutsch">Logo design for a non-profit</div>
+          <div class="card-subtitle" *ngIf = "deutsch">Logo-Design für eine Non-Profit</div>
+    
+        </div>
+        <img class="card-image" src="assets/img/card-polizei-gewalt.jpg" />
+    
+        <div class="card-button">
+     <button ion-button full color="secondary-light" class="cover" *ngIf="!deutsch">Know More</button>
+        <button ion-button full color="secondary-light" class="cover" *ngIf="deutsch">Mehr wissen</button>      </div>
+      </ion-card>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    
+    
+    </div>
+    
+    
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-42932342-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>

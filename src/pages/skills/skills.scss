@@ -1,0 +1,21 @@
+page-skills {
+    @include slide-container($scroll: yes){
+     @include mq(laptop){
+       // height: 70vh;
+        //margin-top: 10vh;
+        height:525px;
+     } 
+    };
+  
+    h2 {
+      font-size: 1.7em;
+      color: color($colors, primary-text-2);
+      font-family: $text;
+    }
+    h3 {
+      color: color($colors, primary-2);
+      font-family: $text;
+    }
+  
+  }
+  

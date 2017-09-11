@@ -14,3 +14,295 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+@font-face {
+    font-family: 'Exo 2';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Exo 2 Light Italic'), local('Exo2-LightItalic'),
+         url('../assets/fonts/Exo_2/Exo2-LightItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+  }
+  
+  
+  @import "_mixins";
+  
+   .content {
+     background-color: #000;
+    } 
+  .header-container {
+    height: 20.2%;
+    width: 100%;
+    background: color($colors, 'dark');
+    z-index: 10;
+    padding-top: 0.5%;
+    box-shadow: 0 4px 12px -4px color($colors, 'secondary'); //margin-top: 0px;
+    @include mq(laptop) {
+      height: $header-height;
+    }
+  }
+  
+  .me-container {
+    height: 100%;
+    width: 282px;
+    width: 88.3%;
+    margin: 0 auto;
+  } //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  //item & avatar styles************************************
+  .item {
+    width: 100vw;
+    background: color($colors, 'dark');
+    padding-left: 0;
+    padding: 3vw;
+    max-width: 410px;
+    @include mq(laptop) {
+      //float: left;
+      padding: 20px;
+      margin-top: -7px;
+      height: 104.8%;
+    }
+  }
+  
+  .item ion-avatar img {
+    width: 78px;
+    height: 78px;
+    height: 19%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: solid 3px;
+    border-color: color($colors, secondary);
+    @include mq(iphone5) {
+      width: 65px;
+    }
+  }
+  
+  .item.item-block .item-inner {
+    border-bottom: none;
+  }
+  
+  .item.item-block .item-inner {
+    padding-right: 0px;
+  }
+  
+  .label {
+    margin: 0 0 0 0;
+  }
+  
+  .item h2 {
+    margin: 0 0 2px;
+    font-size: 1.7em;
+    font-weight: normal;
+    font-family: $decorative-headline;
+    letter-spacing: 0px;
+    margin-left: 6%; // margin from the logo image
+    color: color($colors, 'secondary');
+    @include mq(iphone5) {
+      font-size: 1.38em;
+    }
+    /* @media (max-width: 374px) {
+        //iphone5
+        font-size: 1.38em;
+      }
+      */
+    @include mq(iphone6) {}
+    @include mq(laptop) {
+      margin-left: 3%;
+    }
+  }
+  
+  .item p {
+    margin: 0 0 2px;
+    font-size: 0.65em;
+    line-height: normal;
+    text-overflow: inherit;
+    color: color($colors, 'secondary-text');
+    text-align: left;
+    letter-spacing: 3px;
+    font-family: $decorative-text;
+    @include mq(iphone5) {
+      font-size: 0.36em;
+    }
+    @include mq(iphone6) {}
+  }
+  
+  .item ion-avatar[item-left],
+  .item ion-thumbnail[item-left] {
+    margin-right: 10px;
+    margin-left: 1px;
+  } //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  .tabbar {
+    box-shadow: 0 4px 12px -4px color($colors, 'secondary'); //margin-top: 0px; 
+    @include mq(laptop) {
+       max-width: 25vw;
+      margin-left: 8.8vw;
+      margin-top: 3.75vh;
+      box-shadow: none;
+       top:0; // tabsPlacement becomes 'bottom',
+      height: $header-height *0.5;
+  
+    }
+    @include mq(tablet) {
+      //height: 14vh;
+      //margin-right: 10px; //margin-left: 50vw;
+      box-shadow: none; // margin-top: -14vh;
+      // max-width: 35vw;
+      // margin-left: 65vw;
+      // margin-top: -14.55vh;
+      height: 13.087vh;
+      /* margin-right: 10vh; */
+      /* box-shadow: none; */
+      /* margin-top: -14vh; */
+      max-width: 35vw;
+      margin-left: 65vw;
+      /* margin-top: -14.55vh; */
+    }
+  }
+  
+  
+  /*
+  .tabs[tabsPlacement=top] .tabbar {
+  }
+  
+  .tabs .tab-button-icon {
+    color: rgba(155, 47, 89, 0.7);
+  }
+  
+  .tabs .tab-button {
+    color: rgba(36, 123, 141, 0.7);
+  }
+  */
+  
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: color($colors, primary-text);
+  }
+  
+  .swiper-pagination-bullet {
+    background: color($colors, secondary-text);
+  }
+  
+  //------------------------------------------------------------------------------
+  h1 {
+    font-family: $headline;
+    font-size: 1.16em;
+    letter-spacing: 1px;
+    color: color($colors, primary-text);
+    @include mq(iphone6) {
+      font-size: 1em;
+    }
+    @include mq(iphone5) {
+      font-size: 0.85em;
+    }
+  }
+  
+  p {
+    margin: 0 0 2px;
+    font-size: 1.13em;
+    line-height: normal;
+    text-overflow: inherit;
+    color: color($colors, 'secondary-text'); //color: #00303d;
+    text-align: center;
+    letter-spacing: 1.7px;
+    font-family: $text;
+    margin-bottom: 3.7vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    @include mq(iphone6) {
+      font-size: 0.97em;
+    }
+    @include mq(iphone5) {
+      font-size: 0.8em;
+    }
+  }
+  
+  .toolbar ion-title {
+    font-family: $text;
+    letter-spacing: 2px;
+  }
+  
+  //sub page+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  .sub-page {
+    .scroll-content {
+      overflow-y: scroll; //hides the scrollbar
+    } //global*******************************************************
+    .header .toolbar:last-child .toolbar-background {
+      background: color($colors, dark);
+    }
+    .back-button-text-ios {
+      color: color($colors, 'secondary-text');
+    }
+    ion-icon {
+      color: color($colors, secondary-light);
+    }
+    .button-inner {
+      font-family: $text;
+      letter-spacing: 1px;
+    } //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    .scroll-content {
+      background: color($colors, light-dark);
+      overflow: scroll;
+    }
+    p {
+      font-size: 1.3em;
+      letter-spacing: 1.2px;
+      font-family: $text;
+      margin-bottom: 3.7vh; //width: 93vw;
+    }
+    h1 {
+      text-align: center;
+    }
+    .footer-button-container {
+      width: 361px;
+      margin: 0 auto;
+    }
+  }
+  
+  //-------------------------------------------------------------------------------------------------------------------------
+  //tabs area+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  .tabs-area {
+    //tabs styles*********************************************
+    //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    //CTA button.button-ios-primary {
+    .button-md-primary {
+      font-family: $text;
+      letter-spacing: 1px;
+      height: 7.5vh;
+      width: 43vw;
+    }
+    .button-ios-primary {
+      font-family: $text;
+      letter-spacing: 1px;
+      height: 7.5vh;
+      width: 43vw;
+    }
+    .header-background {
+      height: 100%;
+      width: 100%;
+      background-size: cover; // margin-top: -52px;
+    } //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    //continers*************************************
+    //media queries************************************************
+    @include mq(iphone5) {
+      /*iphone 5*/
+    }
+    @include mq(iphone6) {
+      /*iphone 6*/
+    } //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    //--------------------------------------------------------------------------
+  
+    .show-only-on-mobile{
+    @include show-only-on(mobile);
+  }
+  .show-only-on-laptop{
+    @include show-only-on(laptop);
+  }
+  
+  
+  .spacer{
+    height:5vh;
+    width:100%;
+    @include mq(laptop){
+  height:0;
+    }
+  }
+  }
